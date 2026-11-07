@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillSwap - Exchange Skills, Grow Together</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Skill<span>Swap.</span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#explore">Explore Skills</a></li>
+                <li><a href="#how">How It Works</a></li>
+                <li><a href="#about">About Us</a></li>
+
+            </ul>
+
+            <div class="nav-buttons">
+
+                <button class="login-btn" onclick="showMessage('Login functionality will be connected with Python Flask.')">
+                    Login
+                </button>
+
+                <button class="signup-btn" onclick="showMessage('Registration functionality will be connected with Python Flask.')">
+                    Join Now
+                </button>
+
+            </div>
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✨ Learn Together. Grow Together.
+            </div>
+
+            <h1>
+                Your Skills Have Value.
+                <span>Share Them.</span>
+            </h1>
+
+            <p>
+                Connect with talented students, exchange knowledge
+                and learn something new without spending money.
+                Your next skill partner is just one click away.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#explore" class="primary-btn">
+                    Explore Skills →
+                </a>
+
+                <a href="#how" class="secondary-btn">
+                    How It Works
+                </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div>
+                    <h2>500+</h2>
+                    <p>Students</p>
+                </div>
+
+                <div>
+                    <h2>100+</h2>
+                    <p>Skills</p>
+                </div>
+
+                <div>
+                    <h2>300+</h2>
+                    <p>Exchanges</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="floating-card card-one">
+                🎨 Photoshop
+                <small>Learn something creative</small>
+            </div>
+
+            <div class="floating-card card-two">
+                💻 Python
+                <small>Share your knowledge</small>
+            </div>
+
+            <div class="floating-card card-three">
+                🎸 Guitar
+                <small>Discover new talents</small>
+            </div>
+
+            <div class="hero-circle">
+                <span>🤝</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-section" id="how">
+
+        <div class="section-heading">
+
+            <span class="small-heading">HOW IT WORKS</span>
+
+            <h2>Learning is Better Together</h2>
+
+            <p>
+                Three simple steps to exchange knowledge
+                and develop new skills.
+            </p>
+
+        </div>
+
+
+        <div class="steps-container">
+
+            <div class="step-card">
+
+                <div class="step-icon">👤</div>
+
+                <h3>Create Your Profile</h3>
+
+                <p>
+                    Tell other students about your skills
+                    and what you want to learn.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-icon">🔍</div>
+
+                <h3>Find Your Match</h3>
+
+                <p>
+                    Discover students who can teach
+                    the skills you want to learn.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-icon">🤝</div>
+
+                <h3>Exchange Skills</h3>
+
+                <p>
+                    Connect with students and exchange
+                    knowledge together.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPLORE SKILLS -->
+
+    <section class="explore-section" id="explore">
+
+        <div class="section-heading">
+
+            <span class="small-heading">DISCOVER TALENT</span>
+
+            <h2>Explore Skills & Find Your Match</h2>
+
+            <p>
+                Search for students who have the skills
+                you're looking to learn.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH BAR -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search skills like Python, Photoshop, Guitar..."
+            >
+
+            <button onclick="searchSkills()">
+                Search
+            </button>
+
+        </div>
+
+
+        <!-- FILTER BUTTONS -->
+
+        <div class="category-buttons">
+
+            <button class="category-btn active" onclick="filterSkills('All', this)">
+                All Skills
+            </button>
+
+            <button class="category-btn" onclick="filterSkills('Technology', this)">
+                Technology
+            </button>
+
+            <button class="category-btn" onclick="filterSkills('Design', this)">
+                Design
+            </button>
+
+            <button class="category-btn" onclick="filterSkills('Music', this)">
+                Music
+            </button>
+
+            <button class="category-btn" onclick="filterSkills('Business', this)">
+                Business
+            </button>
+
+        </div>
+
+
+        <!-- STUDENT CARDS -->
+
+        <div class="students-container" id="studentsContainer">
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-content">
+
+            <span class="small-heading">ABOUT SKILLSWAP</span>
+
+            <h2>
+                Everyone Has Something
+                <span>Worth Sharing.</span>
+            </h2>
+
+            <p>
+                SkillSwap is a student-focused skill exchange
+                platform designed to make learning accessible
+                to everyone.
+
+                We believe knowledge should be shared,
+                not limited by expensive courses or resources.
+
+                Teach what you know. Learn what you love.
+            </p>
+
+            <a href="#explore" class="primary-btn">
+                Start Exploring →
+            </a>
+
+        </div>
+
+        <div class="about-visual">
+            <div class="about-emoji">🌱</div>
+            <h3>Learn. Share. Grow.</h3>
+            <p>Knowledge becomes more valuable when shared.</p>
+        </div>
+
+    </section>
+
+
+    <!-- CTA SECTION -->
+
+    <section class="cta-section">
+
+        <h2>Ready to Exchange Your Skills?</h2>
+
+        <p>
+            Join a community where everyone has something to teach
+            and something to learn.
+        </p>
+
+        <button class="cta-btn" onclick="showMessage('Registration will be available soon!')">
+            Join SkillSwap Today →
+        </button>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Skill<span>Swap.</span>
+        </div>
+
+        <p>
+            © 2026 SkillSwap. All Rights Reserved.
+        </p>
+
+        <p>
+            Made for Students, By Students ❤️
+        </p>
+
+    </footer>
+
+
+    <!-- CUSTOM MESSAGE -->
+
+    <div id="messageBox" class="message-box"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
